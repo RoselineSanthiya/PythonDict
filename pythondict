@@ -1,1 +1,374 @@
-1.
+x={'name':'bee','age':5,'city':'trichy'}
+
+In [90]: type(x)
+Out[90]: dict
+
+In [91]: x
+Out[91]: {'name': 'bee', 'age': 5, 'city': 'trichy'}
+
+In [92]: x.pop('age')
+Out[92]: 5
+
+In [93]: x
+Out[93]: {'name': 'bee', 'city': 'trichy'}
+
+In [94]: x.popitem?
+Signature: x.popitem()
+Docstring:
+Remove and return a (key, value) pair as a 2-tuple.
+
+Pairs are returned in LIFO (last-in, first-out) order.
+Raises KeyError if the dict is empty.
+Type:      builtin_function_or_method
+
+In [95]: x.popitem('age':5)
+  Cell In[95], line 1
+    x.popitem('age':5)
+                   ^
+SyntaxError: invalid syntax
+
+
+In [96]: x.popitem()
+Out[96]: ('city', 'trichy')
+
+In [97]: c
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+Cell In[97], line 1
+----> 1 c
+
+NameError: name 'c' is not defined
+
+In [98]: x
+Out[98]: {'name': 'bee'}
+
+In [99]: x.values?
+Docstring: D.values() -> an object providing a view on D's values
+Type:      builtin_function_or_method
+
+In [100]: x.values()
+Out[100]: dict_values(['bee'])
+
+In [101]: x
+Out[101]: {'name': 'bee'}
+
+In [102]: x={'name':'bee','age':5,'city':'trichy'}
+
+In [103]: x.values()
+Out[103]: dict_values(['bee', 5, 'trichy'])
+
+In [104]: x.fromkeys?
+Signature: x.fromkeys(iterable, value=None, /)
+Docstring: Create a new dictionary with keys from iterable and values set to value.
+Type:      builtin_function_or_method
+
+In [105]: y=('pink','purple','skyblue','grey')
+
+In [106]: z=dict.fromkeys(y)
+
+In [107]: z
+Out[107]: {'pink': None, 'purple': None, 'skyblue': None, 'grey': None}
+
+In [108]: z.update?
+Docstring:
+D.update([E, ]**F) -> None.  Update D from dict/iterable E and F.
+If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
+In either case, this is followed by: for k in F:  D[k] = F[k]
+Type:      builtin_function_or_method
+
+In [109]: z.update('pink'='color1)
+  Cell In[109], line 1
+    z.update('pink'='color1)
+                    ^
+SyntaxError: unterminated string literal (detected at line 1)
+
+
+In [110]: z.update('pink'='color1')
+  Cell In[110], line 1
+    z.update('pink'='color1')
+             ^
+SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
+
+
+In [111]: z.update('pink':'color1')
+  Cell In[111], line 1
+    z.update('pink':'color1')
+                   ^
+SyntaxError: invalid syntax
+
+
+In [112]: z.update(pink:'color1')
+  Cell In[112], line 1
+    z.update(pink:'color1')
+                 ^
+SyntaxError: invalid syntax
+
+
+In [113]: z.update(pink 'color1')
+  Cell In[113], line 1
+    z.update(pink 'color1')
+                  ^
+SyntaxError: invalid syntax
+
+
+In [114]: z.update(pink='color1')
+
+In [115]:
+
+In [115]: z
+Out[115]: {'pink': 'color1', 'purple': None, 'skyblue': None, 'grey': None}
+
+In [116]: x.update({'gender':'female'})
+
+In [117]: x
+Out[117]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'gender': 'female'}
+
+In [118]: x.
+  Cell In[118], line 1
+    x.
+      ^
+SyntaxError: invalid syntax
+
+
+In [119]: x
+Out[119]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'gender': 'female'}
+
+In [120]: x.get?
+Signature: x.get(key, default=None, /)
+Docstring: Return the value for key if key is in the dictionary, else default.
+Type:      builtin_function_or_method
+
+In [121]: x.get(name)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+Cell In[121], line 1
+----> 1 x.get(name)
+
+NameError: name 'name' is not defined
+
+In [122]: x.get(bee)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+Cell In[122], line 1
+----> 1 x.get(bee)
+
+NameError: name 'bee' is not defined
+
+In [123]: x.get('name')
+Out[123]: 'bee'
+
+In [124]: x.items?
+Docstring: D.items() -> a set-like object providing a view on D's items
+Type:      builtin_function_or_method
+
+In [125]: x.items()
+Out[125]: dict_items([('name', 'bee'), ('age', 5), ('city', 'trichy'), ('gender', 'female')])
+
+In [126]: x.items('name')
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[126], line 1
+----> 1 x.items('name')
+
+TypeError: dict.items() takes no arguments (1 given)
+
+In [127]: x.items()
+Out[127]: dict_items([('name', 'bee'), ('age', 5), ('city', 'trichy'), ('gender', 'female')])
+
+In [128]: x.keys?
+Docstring: D.keys() -> a set-like object providing a view on D's keys
+Type:      builtin_function_or_method
+
+In [129]: x.keys?
+Docstring: D.keys() -> a set-like object providing a view on D's keys
+Type:      builtin_function_or_method
+
+In [130]: x.keys()
+Out[130]: dict_keys(['name', 'age', 'city', 'gender'])
+
+In [131]: x.values()
+Out[131]: dict_values(['bee', 5, 'trichy', 'female'])
+
+In [132]: x.setdefault?
+Signature: x.setdefault(key, default=None, /)
+Docstring:
+Insert key with a value of default if key is not in the dictionary.
+
+Return the value for key if key is in the dictionary, else default.
+Type:      builtin_function_or_method
+
+In [133]: x
+Out[133]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'gender': 'female'}
+
+In [134]: x={'name':'bee','age':5,'city':'trichy','gender':''}
+
+In [135]: x
+Out[135]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'gender': ''}
+
+In [136]: x.setdefault('gender','female')
+Out[136]: ''
+
+In [137]: x
+Out[137]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'gender': ''}
+
+In [138]: x={'name':'bee','age':5,'city':'trichy','gender':}
+  Cell In[138], line 1
+    x={'name':'bee','age':5,'city':'trichy','gender':}
+                                                    ^
+SyntaxError: expression expected after dictionary key and ':'
+
+
+In [139]: x={'name':'bee','age':5,'city':'trichy','gender'}
+  Cell In[139], line 1
+    x={'name':'bee','age':5,'city':'trichy','gender'}
+                                                   ^
+SyntaxError: ':' expected after dictionary key
+
+
+In [140]: x={'name':'bee','age':5,'city':'trichy','gender':none}
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+Cell In[140], line 1
+----> 1 x={'name':'bee','age':5,'city':'trichy','gender':none}
+
+NameError: name 'none' is not defined
+
+In [141]: x={'name':'bee','age':5,'city':'trichy','gender':None}
+
+In [142]: x.setdefault('gender','female')
+
+In [143]: x
+Out[143]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'gender': None}
+
+In [144]: x.setdefault('gender':'female')
+  Cell In[144], line 1
+    x.setdefault('gender':'female')
+                         ^
+SyntaxError: invalid syntax
+
+
+In [145]: x.setdefault()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[145], line 1
+----> 1 x.setdefault()
+
+TypeError: setdefault expected at least 1 argument, got 0
+
+In [146]: x.setdefault('gender')
+
+In [147]: x
+Out[147]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'gender': None}
+
+In [148]: x.setdefault('name')
+Out[148]: 'bee'
+
+In [149]: x.setdefault('name2')
+
+In [150]: x
+Out[150]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'gender': None, 'name2': None}
+
+In [151]: x.update({'gender':'female'},{'name2':'tom'})
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[151], line 1
+----> 1 x.update({'gender':'female'},{'name2':'tom'})
+
+TypeError: update expected at most 1 argument, got 2
+
+In [152]: x.update({'gender':'female'})
+
+In [153]: x
+Out[153]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'gender': 'female', 'name2': None}
+
+In [154]: x.update({'gender':None})
+
+In [155]: x
+Out[155]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'gender': None, 'name2': None}
+
+In [156]: x.update(gender='female')
+
+In [157]: x.update('gender':None)
+  Cell In[157], line 1
+    x.update('gender':None)
+                     ^
+SyntaxError: invalid syntax
+
+
+In [158]: x.update({'gender':None})
+
+In [159]: x.update(gender='female',name2='tom')
+
+In [160]: x
+Out[160]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'gender': 'female', 'name2': 'tom'}
+
+In [161]:
+rain=['rose','lily','lotus']
+
+In [162]: rain
+Out[162]: ['rose', 'lily', 'lotus']
+
+In [163]: x=dict.fromkeys(rain)
+
+In [164]: x
+Out[164]: {'rose': None, 'lily': None, 'lotus': None}
+
+In [165]: x=dict.fromkeys(rose='tea',lily='tea1',lotus='tea3')
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[165], line 1
+----> 1 x=dict.fromkeys(rose='tea',lily='tea1',lotus='tea3')
+
+TypeError: dict.fromkeys() takes no keyword arguments
+
+In [166]: x.update(rose='tea',lily='tea1',lotus='tea3')
+
+In [167]: x
+Out[167]: {'rose': 'tea', 'lily': 'tea1', 'lotus': 'tea3'}
+x={'name':'bee','age':5,'city':'trichy'}
+
+In [170]: y={'colour':'brown'}
+
+In [171]: z=x.copy()
+
+In [172]: z.update(y)
+
+In [173]: z
+Out[173]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'colour': 'brown'}
+
+In [174]: x
+Out[174]: {'name': 'bee', 'age': 5, 'city': 'trichy'}
+
+In [175]: y
+Out[175]: {'colour': 'brown'}
+
+In [176]: z
+Out[176]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'colour': 'brown'}
+x={'name':'bee','age':5,'city':'trichy'}
+
+In [179]: y=['brown','white']
+
+In [180]: y={'colour':['brown','white']}
+
+In [181]: x.update(y)
+
+In [182]: x
+Out[182]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'colour': ['brown', 'white']}
+
+In [183]: x={'name':'bee','age':5,'city':'trichy','colour':['brown','white']}
+
+In [184]: x
+Out[184]: {'name': 'bee', 'age': 5, 'city': 'trichy', 'colour': ['brown', 'white']}
+
+In [185]: z=['pondi','chennai','salem','ooty','kodai']
+
+In [186]: x.update(city=z)
+
+In [187]: x
+Out[187]:
+{'name': 'bee',
+ 'age': 5,
+ 'city': ['pondi', 'chennai', 'salem', 'ooty', 'kodai'],
+ 'colour': ['brown', 'white']}
+
